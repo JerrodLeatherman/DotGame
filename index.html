@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dot Game</title>
+	<link rel="stylesheet" href="main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class = "score">
+  <h1>Score: </h1>
+  <p id = "score"></p>
+</div>
+<div id="dot" class = "dot"></div>
+
+
+<script>
+var score = 0;
+document.getElementById("score").innerHTML = score;
+
+$(function(){
+  $("#dot").click(function(){
+    score +=10;
+    document.getElementById("score").innerHTML = score;
+    var top = Math.floor(Math.random() * 80) + 10;
+    var left = Math.floor(Math.random() * 80) + 10;
+    $("#dot").animate({
+      top: left + '%', left: top + '%'
+    },250);
+
+  });
+});
+
+</script>
+
+</body>
+</html>
